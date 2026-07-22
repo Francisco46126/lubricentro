@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lubricentro Rex | Servicio Automotriz en Córdoba</title>
+<meta name="description" content="Lubricentro Rex: cambio de aceite, frenos, refrigerante y mecánica ligera en Córdoba Capital. Atendemos autos, motos y camionetas.">
+<meta name="keywords" content="lubricentro cordoba, cambio de aceite, mecanica ligera, cambio de frenos cordoba">
+<meta property="og:title" content="Lubricentro Rex | Servicio Automotriz en Córdoba">
+<meta property="og:description" content="Cuidamos tu vehículo con productos de primera calidad. Turnos por WhatsApp.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#10151f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutoRepair",
+  "name": "Lubricentro Rex",
+  "image": "https://tudominio.com/imagen-fachada.jpg",
+  "url": "https://tudominio.com",
+  "telephone": "+5493510000000",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Calle Ejemplo 123",
+    "addressLocality": "Córdoba",
+    "addressRegion": "Córdoba",
+    "postalCode": "5000",
+    "addressCountry": "AR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": -31.4201, "longitude": -64.1888 },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:30", "closes": "12:30" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "16:00", "closes": "19:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "09:00", "closes": "12:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/tu_usuario", "https://www.facebook.com/tu_pagina"]
+}
+</script>
+<style>
+  :root{
+    --dark:#10151f;
+    --dark-2:#1b2333;
+    --primary:#ff6a3d;
+    --primary-dark:#e0511f;
+    --light:#f4f5f7;
+    --white:#ffffff;
+    --gray:#6b7280;
+    --text-dark:#171923;
+    --radius:12px;
+    --shadow:0 10px 30px rgba(16,21,31,.08);
+    --transition:.3s ease;
+    --max-w:1180px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',sans-serif;color:var(--text-dark);line-height:1.6;background:var(--white);overflow-x:hidden;}
+  h1,h2,h3,h4{font-family:'Poppins',sans-serif;line-height:1.25;}
+  a{text-decoration:none;color:inherit;}
+  ul{list-style:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:var(--max-w);margin:0 auto;padding:0 24px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:14px 28px;border-radius:50px;font-weight:600;
+    font-size:15px;transition:var(--transition);border:2px solid transparent;
+    cursor:pointer;white-space:nowrap;
+  }
+  .btn-primary{background:var(--primary);color:#fff;}
+  .btn-primary:hover{background:var(--primary-dark);transform:translateY(-3px);box-shadow:0 12px 24px rgba(255,106,61,.35);}
+  .btn-outline{background:transparent;border-color:rgba(255,255,255,.5);color:#fff;}
+  .btn-outline:hover{background:rgba(255,255,255,.12);border-color:#fff;}
+  .section-tag{color:var(--primary);font-weight:600;font-size:14px;text-transform:uppercase;letter-spacing:1px;}
+  .section-title{font-size:clamp(26px,4vw,38px);font-weight:700;margin:8px 0 16px;}
+  .section-sub{color:var(--gray);font-size:16px;max-width:560px;}
+  .section-head{text-align:center;margin:0 auto 48px;}
+  .section-head .section-sub{margin:0 auto;}
+  section{padding:88px 0;}
+
+  /* ---------- REVEAL ANIMATIONS ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  .reveal-delay-1{transition-delay:.1s;}
+  .reveal-delay-2{transition-delay:.2s;}
+  .reveal-delay-3{transition-delay:.3s;}
+
+  /* ---------- NAVBAR ---------- */
+  header{
+    position:fixed;top:0;left:0;width:100%;z-index:1000;
+    padding:18px 0;transition:var(--transition);background:transparent;
+  }
+  header.scrolled{background:var(--dark);padding:12px 0;box-shadow:0 4px 20px rgba(0,0,0,.2);}
+  header .container{display:flex;align-items:center;justify-content:space-between;}
+  .logo{display:flex;align-items:center;gap:10px;}
+  .logo-img{width:40px;height:40px;border-radius:9px;object-fit:cover;}
+  .logo-text{font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;color:#fff;}
+  nav ul{display:flex;gap:32px;}
+  nav a{color:#fff;font-weight:500;font-size:15px;position:relative;padding:4px 0;}
+  nav a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--primary);transition:var(--transition);}
+  nav a:hover::after{width:100%;}
+  .nav-actions{display:flex;align-items:center;gap:16px;}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px;}
+  .hamburger span{width:26px;height:2px;background:#fff;border-radius:2px;transition:var(--transition);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    position:relative;
+    background-image: url("https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=1600");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:#fff;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(115deg,rgba(16,21,31,.92) 15%,rgba(16,21,31,.55) 55%,rgba(16,21,31,.35) 100%);
+  }
+  .hero-content{position:relative;z-index:2;max-width:640px;}
+  .hero h1{font-size:clamp(32px,5.5vw,54px);font-weight:700;margin-bottom:18px;}
+  .hero p{font-size:18px;color:rgba(255,255,255,.75);margin-bottom:32px;max-width:520px;}
+  .hero-buttons{display:flex;gap:16px;flex-wrap:wrap;}
+
+  /* ---------- SERVICIOS ---------- */
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+  .service-card{
+    background:var(--white);border-radius:var(--radius);padding:32px 24px;
+    box-shadow:var(--shadow);transition:var(--transition);border:1px solid #eee;
+  }
+  .service-card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(16,21,31,.12);border-color:var(--primary);}
+  .service-icon{
+    width:56px;height:56px;border-radius:14px;background:rgba(255,106,61,.1);
+    display:flex;align-items:center;justify-content:center;margin-bottom:20px;
+  }
+  .service-icon svg{width:28px;height:28px;stroke:var(--primary);}
+  .service-card h3{font-size:18px;margin-bottom:10px;}
+  .service-card p{color:var(--gray);font-size:14px;}
+
+  /* ---------- MARCAS / PRODUCTOS ---------- */
+  .brands{
+
+    background:#f7f7f7;
+
+    overflow:hidden;
+
+    padding:90px 0;
+
+}
+
+.brands-slider{
+
+    width:100%;
+
+    overflow:hidden;
+
+    position:relative;
+
+    margin-top:60px;
+
+}
+
+.brands-track{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:70px;
+
+    width:max-content;
+
+    animation:scrollBrands 28s linear infinite;
+
+}
+
+.brands-track img{
+
+    width:160px;
+
+    height:70px;
+
+    object-fit:contain;
+
+    opacity:.8;
+
+    transition:.3s;
+
+    filter:grayscale(100%);
+
+}
+
+.brands-track img:hover{
+
+    filter:none;
+
+    opacity:1;
+
+    transform:scale(1.1);
+
+}
+
+@keyframes scrollBrands{
+
+    from{
+
+        transform:translateX(0);
+
+    }
+
+    to{
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+.brands-slider::before,
+.brands-slider::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    width:180px;
+
+    height:100%;
+
+    z-index:5;
+
+}
+
+.brands-slider::before{
+
+    left:0;
+
+    background:linear-gradient(to right,#f7f7f7,transparent);
+
+}
+
+.brands-slider::after{
+
+    right:0;
+
+    background:linear-gradient(to left,#f7f7f7,transparent);
+
+}
+
+  /* ---------- GALERIA ---------- */
+  .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:180px;gap:16px;}
+  .gallery-item{border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;}
+  .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2;}
+  .gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .gallery-item:hover img{transform:scale(1.1);}
+  .gallery-item::after{
+    content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(16,21,31,.55),transparent 50%);
+    opacity:0;transition:var(--transition);
+  }
+  .gallery-item:hover::after{opacity:1;}
+
+  /* ---------- STATS ---------- */
+  .stats{background:var(--dark);color:#fff;}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;}
+  .stat-number{font-size:42px;font-weight:700;color:var(--primary);font-family:'Poppins',sans-serif;}
+  .stat-label{color:rgba(255,255,255,.65);font-size:14px;margin-top:8px;}
+
+  /* ---------- TESTIMONIOS ---------- */
+  .testimonial-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testimonial-card{background:var(--light);border-radius:var(--radius);padding:28px;transition:var(--transition);}
+  .testimonial-card:hover{box-shadow:var(--shadow);transform:translateY(-4px);}
+  .stars{color:var(--primary);margin-bottom:12px;font-size:15px;letter-spacing:2px;}
+  .testimonial-card p{font-size:14px;color:var(--text-dark);margin-bottom:18px;font-style:italic;}
+  .testimonial-author{display:flex;align-items:center;gap:12px;}
+  .author-avatar{
+    width:40px;height:40px;border-radius:50%;background:var(--primary);color:#fff;
+    display:flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;
+  }
+  .author-name{font-weight:600;font-size:14px;}
+  .author-source{font-size:12px;color:var(--gray);}
+
+  /* ---------- MAPA / CONTACTO INFO ---------- */
+  .map-section{background:var(--light);}
+  .map-wrapper{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:stretch;}
+  .map-frame{border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow);min-height:360px;}
+  .map-frame iframe{width:100%;height:100%;border:0;min-height:360px;}
+  .info-card{background:#fff;border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);}
+  .info-row{display:flex;gap:16px;margin-bottom:24px;align-items:flex-start;}
+  .info-row .icon{
+    width:44px;height:44px;flex-shrink:0;border-radius:10px;background:rgba(255,106,61,.1);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .info-row .icon svg{width:20px;height:20px;stroke:var(--primary);}
+  .info-row h4{font-size:15px;margin-bottom:4px;}
+  .info-row p{font-size:14px;color:var(--gray);}
+
+  /* ---------- CONTACTO (rediseñado) ---------- */
+  .contact-form{background:var(--dark);color:#fff;}
+  .contact-card{
+    max-width:900px;margin:0 auto;background:var(--dark-2);
+    border:1px solid rgba(255,106,61,.35);border-radius:20px;
+    padding:56px;position:relative;overflow:hidden;
+  }
+  .contact-card::before{
+    content:'';position:absolute;top:-45%;left:-15%;width:60%;height:85%;
+    background:radial-gradient(circle,rgba(255,106,61,.22),transparent 70%);
+    pointer-events:none;
+  }
+  .contact-buttons-row{display:flex;gap:16px;margin-bottom:32px;position:relative;z-index:1;}
+  .btn-contact{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:20px 24px;border-radius:14px;font-weight:600;font-size:16px;
+    transition:var(--transition);color:#fff;
+  }
+  .btn-contact svg{width:20px;height:20px;stroke:currentColor;flex-shrink:0;}
+  .btn-contact.primary{background:linear-gradient(135deg,#ff8a4c,#ff5a36);}
+  .btn-contact.primary:hover{transform:translateY(-3px);box-shadow:0 12px 24px rgba(255,106,61,.35);}
+  .btn-contact.outline{background:transparent;border:1px solid rgba(255,255,255,.25);}
+  .btn-contact.outline:hover{background:rgba(255,255,255,.08);}
+  .contact-divider{
+    display:flex;align-items:center;gap:16px;margin:0 0 32px;color:rgba(255,255,255,.5);
+    font-size:14px;position:relative;z-index:1;
+  }
+  .contact-divider::before,.contact-divider::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.15);}
+  .social-buttons-row{display:flex;gap:16px;position:relative;z-index:1;}
+  .btn-social{
+    flex:1;display:flex;align-items:center;justify-content:center;gap:10px;
+    padding:18px 24px;border-radius:14px;font-weight:600;font-size:15px;color:#fff;
+    border:1px solid rgba(255,255,255,.18);transition:var(--transition);
+  }
+  .btn-social.instagram{border-color:rgba(240,90,150,.4);}
+  .btn-social.instagram:hover{background:rgba(240,90,150,.1);}
+  .btn-social.facebook{border-color:rgba(66,133,244,.4);}
+  .btn-social.facebook:hover{background:rgba(66,133,244,.1);}
+  .social-icon-circle{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .social-icon-circle.ig{background:linear-gradient(135deg,#f9ce34,#ee2a7b,#6228d7);}
+  .social-icon-circle.fb{background:#1877f2;}
+  .social-icon-circle svg{width:14px;height:14px;fill:#fff;}
+  .trust-row{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+    max-width:1100px;margin:48px auto 0;
+  }
+  .trust-item{display:flex;gap:14px;align-items:flex-start;}
+  .trust-item .icon{
+    width:44px;height:44px;flex-shrink:0;border-radius:10px;border:1px solid rgba(255,106,61,.4);
+    display:flex;align-items:center;justify-content:center;
+  }
+  .trust-item .icon svg{width:20px;height:20px;stroke:var(--primary);}
+  .trust-item h4{font-size:14px;color:#fff;margin-bottom:4px;}
+  .trust-item p{font-size:13px;color:rgba(255,255,255,.55);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--dark);color:rgba(255,255,255,.7);padding-top:64px;}
+  .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.08);}
+  .footer-logo-wrap{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .footer-logo-img{width:44px;height:44px;border-radius:10px;object-fit:cover;}
+  .footer-logo-text{font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;color:#fff;}
+  .footer-col h4{color:#fff;font-size:15px;margin-bottom:18px;}
+  .footer-col ul li{margin-bottom:10px;font-size:14px;}
+  .footer-col ul li a:hover{color:var(--primary);}
+  .footer-social{display:flex;gap:12px;margin-top:20px;}
+  .footer-social a{
+    width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.06);
+    display:flex;align-items:center;justify-content:center;transition:var(--transition);
+  }
+  .footer-social a:hover{background:var(--primary);}
+  .footer-social svg{width:16px;height:16px;stroke:#fff;}
+  .footer-bottom{padding:24px 0;text-align:center;font-size:13px;color:rgba(255,255,255,.45);}
+
+  /* ---------- WHATSAPP FLOTANTE ---------- */
+  .whatsapp-float{
+    position:fixed;bottom:26px;right:26px;z-index:999;
+    width:60px;height:60px;border-radius:50%;background:#25D366;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 8px 24px rgba(37,211,102,.45);
+  }
+  .whatsapp-float svg{width:30px;height:30px;fill:#fff;}
+  .whatsapp-float::before{
+    content:'';position:absolute;inset:0;border-radius:50%;background:#25D366;
+    animation:pulse 2.2s infinite;z-index:-1;
+  }
+  @keyframes pulse{
+    0%{transform:scale(1);opacity:.7;}
+    100%{transform:scale(1.8);opacity:0;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:992px){
+    .services-grid{grid-template-columns:repeat(2,1fr);}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:32px 16px;}
+    .testimonial-grid{grid-template-columns:1fr;}
+    .map-wrapper{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+    .trust-row{grid-template-columns:repeat(2,1fr);}
+  }
+  @media(max-width:768px){
+    nav,.nav-actions .btn-outline{display:none;}
+    .hamburger{display:flex;}
+    nav.open{
+      display:flex;position:absolute;top:100%;left:0;width:100%;
+      background:var(--dark);flex-direction:column;padding:24px;gap:0;
+    }
+    nav.open ul{flex-direction:column;gap:0;}
+    nav.open li{border-bottom:1px solid rgba(255,255,255,.08);}
+    nav.open a{display:block;padding:14px 0;}
+    .hero-buttons{flex-direction:column;align-items:stretch;}
+    .footer-grid{grid-template-columns:1fr;gap:32px;}
+    .contact-card{padding:32px 24px;}
+    .contact-buttons-row,.social-buttons-row{flex-direction:column;}
+  }
+  @media(max-width:480px){
+    section{padding:64px 0;}
+    .services-grid{grid-template-columns:1fr;}
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px;}
+    .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 1;}
+    .stats-grid{grid-template-columns:1fr 1fr;}
+    .trust-row{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="container">
+    <a href="#inicio" class="logo">
+      <img src="https://placehold.co/80x80/ff6a3d/ffffff?text=LOGO" alt="Logo Lubricentro Rex" class="logo-img">
+      <span class="logo-text">Lubricentro Rex</span>
+    </a>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#galeria">Galería</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="nav-actions">
+      <a href="https://wa.me/5493510000000" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
+      <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="container hero-content">
+    <p class="section-tag reveal">Servicio automotriz en Córdoba</p>
+    <h1 class="reveal reveal-delay-1">Cuidamos tu auto como si fuera nuestro</h1>
+    <p class="reveal reveal-delay-2">Cambio de aceite, frenos, refrigerante y mecánica ligera para autos, motos y camionetas.</p>
+    <div class="hero-buttons reveal reveal-delay-3">
+      <a href="tel:+5493510000000" class="btn btn-primary">📞 Llamanos</a>
+      <a href="https://wa.me/5493510000000?text=Hola%2C%20quiero%20consultar%20por%20un%20turno" class="btn btn-outline" target="_blank" rel="noopener">Escribenos por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-tag">Lo que hacemos</p>
+      <h2 class="section-title">Nuestros servicios</h2>
+      <p class="section-sub">Todo lo que tu vehículo necesita en un solo lugar</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 8 6h8l-4-4Z"/><path d="M8 6v14a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2V6"/><path d="M10 12h4"/></svg></div>
+        <h3>Cambio de aceite y filtros</h3>
+        <p>Aceites y filtros de primeras marcas para mantener el motor protegido, en autos, motos y 4x4.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-1">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c4-2 8-6 8-11V5l-8-3-8 3v6c0 5 4 9 8 11Z"/></svg></div>
+        <h3>Frenos y pastillas</h3>
+        <p>Reemplazo de pastillas y líquido de freno con repuestos de calidad comprobada.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-2">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2 4-6 6-6 11a6 6 0 0 0 12 0c0-5-4-7-6-11Z"/></svg></div>
+        <h3>Refrigerante</h3>
+        <p>Control y cambio completo del líquido refrigerante para evitar recalentamientos.</p>
+      </div>
+      <div class="service-card reveal reveal-delay-3">
+        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg></div>
+        <h3>Mecánica ligera</h3>
+        <p>Bujías, baterías, correas y diagnóstico general para que tu auto ande siempre a punto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="brands" id="productos">
+
+    <div class="container">
+
+        <div class="section-head reveal">
+            <p class="section-tag">Calidad garantizada</p>
+            <h2 class="section-title">Marcas con las que trabajamos</h2>
+            <p class="section-sub">
+                Trabajamos únicamente con productos originales y de primera calidad.
+            </p>
+        </div>
+
+        <div class="brands-slider">
+
+            <div class="brands-track">
+
+                <!-- Primera tanda -->
+
+                <img src="img/marcas/castrol.png" alt="">
+                <img src="img/marcas/shell.png" alt="">
+                <img src="img/marcas/motul.png" alt="">
+                <img src="img/marcas/elf.png" alt="">
+                <img src="img/marcas/total.png" alt="">
+                <img src="img/marcas/wega.png" alt="">
+                <img src="img/marcas/mahle.png" alt="">
+                <img src="img/marcas/valvoline.png" alt="">
+
+                <!-- Duplicadas -->
+
+                <img src="img/marcas/castrol.png" alt="">
+                <img src="img/marcas/shell.png" alt="">
+                <img src="img/marcas/motul.png" alt="">
+                <img src="img/marcas/elf.png" alt="">
+                <img src="img/marcas/total.png" alt="">
+                <img src="img/marcas/wega.png" alt="">
+                <img src="img/marcas/mahle.png" alt="">
+                <img src="img/marcas/valvoline.png" alt="">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="galeria">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-tag">Nuestro taller</p>
+      <h2 class="section-title">Galería</h2>
+      <p class="section-sub">Un vistazo a nuestras instalaciones y trabajo diario</p>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1632823469850-2f77dd9c7f93?w=800&q=60" alt="Mecánico realizando cambio de aceite" loading="lazy"></div>
+      <div class="gallery-item reveal reveal-delay-1"><img src="https://images.unsplash.com/photo-1487754180451-c456f719a1fc?w=500&q=60" alt="Taller mecánico ordenado" loading="lazy"></div>
+      <div class="gallery-item reveal reveal-delay-2"><img src="https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=500&q=60" alt="Revisión de frenos" loading="lazy"></div>
+      <div class="gallery-item reveal reveal-delay-3"><img src="https://images.unsplash.com/photo-1613214150953-b7a02b0a4e6c?w=500&q=60" alt="Herramientas de mecánica" loading="lazy"></div>
+      <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1625047509168-a7026f36de04?w=500&q=60" alt="Auto en elevador de taller" loading="lazy"></div>
+    </div>
+  </div>
+</section>
+
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="reveal">
+        <div class="stat-number"><span data-count="15">0</span>+</div>
+        <div class="stat-label">Años en el rubro</div>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="stat-number"><span data-count="8000">0</span>+</div>
+        <div class="stat-label">Autos atendidos</div>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <div class="stat-number"><span data-count="9">0</span></div>
+        <div class="stat-label">Marcas premium</div>
+      </div>
+      <div class="reveal reveal-delay-3">
+        <div class="stat-number"><span data-count="6">0</span></div>
+        <div class="stat-label">Servicios especializados</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonios">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-tag">Clientes felices</p>
+      <h2 class="section-title">Lo que dicen de nosotros</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">★★★★★</div>
+        <p>"Atención rápida y buena onda. Me explicaron todo antes de hacer el trabajo."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">M</div>
+          <div><div class="author-name">Marcos D.</div><div class="author-source">Reseña de Google</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-1">
+        <div class="stars">★★★★★</div>
+        <p>"Buenos precios y profesionales. Volví varias veces y siempre la misma calidad."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">L</div>
+          <div><div class="author-name">Lucía R.</div><div class="author-source">Reseña de Google</div></div>
+        </div>
+      </div>
+      <div class="testimonial-card reveal reveal-delay-2">
+        <div class="stars">★★★★★</div>
+        <p>"El auto quedó impecable y me avisaron por WhatsApp apenas estuvo listo."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">F</div>
+          <div><div class="author-name">Fede G.</div><div class="author-source">Reseña de Google</div></div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="map-section" id="ubicacion">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-tag">Visitanos</p>
+      <h2 class="section-title">¿Dónde estamos?</h2>
+    </div>
+    <div class="map-wrapper">
+      <div class="map-frame reveal">
+        <iframe src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+      <div class="info-card reveal reveal-delay-1">
+        <div class="info-row">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><h4>Dirección</h4><p>Calle Ejemplo 123, Córdoba, Argentina</p></div>
+        </div>
+        <div class="info-row">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg></div>
+          <div><h4>Teléfono</h4><p>+54 9 351 000-0000</p></div>
+        </div>
+        <div class="info-row">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div>
+          <div><h4>Horarios</h4><p>Lunes a viernes: 8:30 - 12:30 y 16:00 - 19:00<br>Sábados: 9:00 - 12:00</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-form" id="contacto">
+  <div class="container">
+    <div class="section-head reveal">
+      <p class="section-tag">Escribinos</p>
+      <h2 class="section-title" style="color:#fff;">Estamos para ayudarte</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,.6);">Te respondemos a la brevedad, escribinos directo por WhatsApp</p>
+    </div>
+
+    <div class="contact-card reveal">
+      <div class="contact-buttons-row">
+        <a href="tel:+5493510000000" class="btn-contact primary">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.68 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.32 1.85.55 2.81.68A2 2 0 0 1 22 16.92Z"/></svg>
+          Llamanos
+        </a>
+        <a href="https://wa.me/5493510000000?text=Hola%2C%20quiero%20consultar%20por%20un%20turno" class="btn-contact outline" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.35 0-2.6-.32-3.7-.9L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5Z"/></svg>
+          Escribinos por WhatsApp
+        </a>
+      </div>
+
+      <div class="contact-divider">O encontranos en nuestras redes</div>
+
+      <div class="social-buttons-row">
+        <a href="https://www.instagram.com" class="btn-social instagram" target="_blank" rel="noopener">
+          <span class="social-icon-circle ig"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.42.06 4.13s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.42.06-4.12.06s-3.06-.01-4.13-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.7 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.44 2.5c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.3 2 12 2Zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2A3.2 3.2 0 1 1 12 8.8a3.2 3.2 0 0 1 0 6.4ZM17.3 5.4a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg></span>
+          Instagram
+        </a>
+        <a href="https://www.facebook.com" class="btn-social facebook" target="_blank" rel="noopener">
+          <span class="social-icon-circle fb"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg></span>
+          Facebook
+        </a>
+      </div>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust-item reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+        <div><h4>Respuesta rápida</h4><p>Te respondemos lo antes posible</p></div>
+      </div>
+      <div class="trust-item reveal reveal-delay-1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M9 13.5 7 22l5-3 5 3-2-8.5"/></svg></div>
+        <div><h4>Atención personalizada</h4><p>Te asesoramos según tus necesidades</p></div>
+      </div>
+      <div class="trust-item reveal reveal-delay-2">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.5 9 8 11 4.5-2 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <div><h4>Servicio confiable</h4><p>Más de 15 años de experiencia</p></div>
+      </div>
+      <div class="trust-item reveal reveal-delay-3">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 10v11"/><path d="M11 21h6.5a2 2 0 0 0 2-1.6l1.3-6a2 2 0 0 0-2-2.4H14l1-4a2 2 0 0 0-3.6-1.5L7 10"/><path d="M7 10H3v11h4"/></svg></div>
+        <div><h4>Clientes satisfechos</h4><p>Miles de clientes nos recomiendan</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo-wrap">
+          <img src="https://placehold.co/96x96/ff6a3d/ffffff?text=LOGO" alt="Logo Lubricentro Rex" class="footer-logo-img">
+          <span class="footer-logo-text">Lubricentro Rex</span>
+        </div>
+        <p style="font-size:14px;max-width:280px;">Servicio automotriz de confianza en Córdoba. Cuidamos tu vehículo como si fuera nuestro.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3Z"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#productos">Productos</a></li>
+          <li><a href="#galeria">Galería</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contacto</h4>
+        <ul>
+          <li>Calle Ejemplo 123, Córdoba</li>
+          <li>+54 9 351 000-0000</li>
+          <li>Lun a vie: 8:30-19:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2026 Lubricentro Rex. Todos los derechos reservados.</div>
+  </div>
+</footer>
+
+<a href="https://wa.me/5493510000000?text=Hola%2C%20quiero%20consultar%20por%20un%20servicio" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chatear por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.87 9.87 0 0 0 4.75 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.8 14.13c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.61-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.65.5.24.58.82 2 .89 2.15.07.15.12.32.02.51-.1.19-.15.31-.29.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.11 1 2.05 1.31 2.34 1.46.29.15.46.13.63-.08.17-.2.72-.84.91-1.13.19-.29.39-.24.65-.14.27.1 1.69.8 1.98.94.29.15.48.22.55.34.07.13.07.72-.17 1.4Z"/></svg>
+</a>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  const hamburger = document.getElementById('hamburger');
+  const mainNav = document.getElementById('mainNav');
+  hamburger.addEventListener('click', () => mainNav.classList.toggle('open'));
+  mainNav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mainNav.classList.remove('open')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+
+  const counters = document.querySelectorAll('[data-count]');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      const el = entry.target;
+      const target = parseInt(el.dataset.count, 10);
+      const duration = 1600;
+      const start = performance.now();
+      function tick(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        el.textContent = Math.floor(progress * target).toLocaleString('es-AR');
+        if (progress < 1) requestAnimationFrame(tick);
+        else el.textContent = target.toLocaleString('es-AR');
+      }
+      requestAnimationFrame(tick);
+      counterObserver.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(el => counterObserver.observe(el));
+</script>
+</body>
+</html>
